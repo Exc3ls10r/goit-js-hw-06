@@ -18,15 +18,17 @@ const galleryRef = document.querySelector('.gallery');
 galleryRef.style.display = "flex";
 
 const galleryRefs = images.map(image => {
-  const imageRef = document.createElement('img');
-  const itemRef = document.createElement('li');
+  return `<li><img src="${image.url}" alt="${image.alt}"></li>`;
 
-  imageRef.src = image.url;
-  imageRef.alt = image.alt;
-  imageRef.style.width = "300px";
-  itemRef.append(imageRef);
+  // const imageRef = document.createElement('img');
+  // const itemRef = document.createElement('li');
 
-  return itemRef.innerHTML;
+  // imageRef.src = image.url;
+  // imageRef.alt = image.alt;
+  // imageRef.style.width = "300px";
+  // itemRef.append(imageRef);
+
+  // return itemRef.innerHTML;
 });
 
 galleryRef.insertAdjacentHTML("afterbegin", galleryRefs.join(''));
